@@ -1,0 +1,57 @@
+{
+  "model_type": "multiclass_classification",
+  "num_classes": 4,
+  "classes": [
+    {
+      "id": 1,
+      "code": "Sev 1",
+      "label": "MINIMAL_IMPACT",
+      "description": "Minimal delay / local traffic impact"
+    },
+    {
+      "id": 2,
+      "code": "Sev 2",
+      "label": "MODERATE_IMPACT",
+      "description": "Short delay / standard traffic blockage"
+    },
+    {
+      "id": 3,
+      "code": "Sev 3",
+      "label": "SIGNIFICANT_IMPACT",
+      "description": "Extended delay / major corridor blockage"
+    },
+    {
+      "id": 4,
+      "code": "Sev 4",
+      "label": "SEVERE_DISRUPTION",
+      "description": "Corridor closure / severe roadway disruption"
+    }
+  ],
+  "feature_columns": [
+    "latitude",
+    "longitude",
+    "temperature_c",
+    "humidity_pct",
+    "pressure_hpa",
+    "visibility_km",
+    "wind_speed_kmh",
+    "precipitation_mm",
+    "weather_category",
+    "is_night",
+    "is_amenity",
+    "is_crossing",
+    "is_give_way",
+    "is_junction",
+    "is_no_exit",
+    "is_railway",
+    "is_roundabout",
+    "is_station",
+    "is_stop_sign",
+    "is_traffic_calming",
+    "is_traffic_signal",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "feature_count": 23,
+  "measurement_system": "canonical_metric (Celsius, km/h, km, hPa, mm)"
+}

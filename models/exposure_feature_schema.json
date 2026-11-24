@@ -1,0 +1,21 @@
+{
+  "model_id": "exposure_risk_v1",
+  "features": [
+    "road_class",
+    "speed_limit_kmh",
+    "link_length_km",
+    "all_motor_vehicles",
+    "latitude",
+    "longitude"
+  ],
+  "categorical_features": [
+    "road_class"
+  ],
+  "numeric_features": [
+    "speed_limit_kmh",
+    "link_length_km",
+    "all_motor_vehicles",
+    "latitude",
+    "longitude"
+  ]
+}

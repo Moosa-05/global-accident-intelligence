@@ -1,0 +1,675 @@
+{
+  "model_name": "human_injury_severity_global_v2_candidate",
+  "model_version": "2.0.0-candidate",
+  "trained_at": "2026-11-20T08:37:51.717119",
+  "task": "3-Class Physiological Trauma Severity (SLIGHT, SERIOUS, FATAL)",
+  "training_data_sources": [
+    "United Kingdom DfT STATS19 (2022) - OGL v3.0",
+    "France ONISR BAAC (2023) - Licence Ouverte v2.0",
+    "Germany Destatis Unfallatlas (2022) - dl-de/by-2-0",
+    "Australia Transport Victoria Crash Data (2012-2022) - CC BY 4.0"
+  ],
+  "total_records_harmonized": 618571,
+  "loco_cross_country_evaluation": {
+    "AU": {
+      "v1": {
+        "split": "Existing v1 Test (AU)",
+        "sample_count": 201275,
+        "macro_f1": 0.1894,
+        "weighted_f1": 0.1855,
+        "balanced_accuracy": 0.3713,
+        "log_loss": 1.3543,
+        "brier_score": 0.8058,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.6136,
+            "recall": 0.0056,
+            "f1": 0.011,
+            "support": 125562
+          },
+          "SERIOUS": {
+            "precision": 0.3491,
+            "recall": 0.846,
+            "f1": 0.4943,
+            "support": 72308
+          },
+          "FATAL": {
+            "precision": 0.0358,
+            "recall": 0.2623,
+            "f1": 0.0631,
+            "support": 3405
+          }
+        },
+        "confusion_matrix": [
+          [
+            697,
+            111575,
+            13290
+          ],
+          [
+            398,
+            61174,
+            10736
+          ],
+          [
+            41,
+            2471,
+            893
+          ]
+        ]
+      },
+      "v2": {
+        "split": "v2 LOCO Test (AU)",
+        "sample_count": 201275,
+        "macro_f1": 0.369,
+        "weighted_f1": 0.5318,
+        "balanced_accuracy": 0.3843,
+        "log_loss": 0.9207,
+        "brier_score": 0.5668,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.696,
+            "recall": 0.4821,
+            "f1": 0.5696,
+            "support": 125562
+          },
+          "SERIOUS": {
+            "precision": 0.405,
+            "recall": 0.6163,
+            "f1": 0.4888,
+            "support": 72308
+          },
+          "FATAL": {
+            "precision": 0.0437,
+            "recall": 0.0546,
+            "f1": 0.0485,
+            "support": 3405
+          }
+        },
+        "confusion_matrix": [
+          [
+            60537,
+            62751,
+            2274
+          ],
+          [
+            25949,
+            44560,
+            1799
+          ],
+          [
+            498,
+            2721,
+            186
+          ]
+        ]
+      },
+      "macro_f1_delta": 0.1796,
+      "balanced_acc_delta": 0.013
+    },
+    "DE": {
+      "v1": {
+        "split": "Existing v1 Test (DE)",
+        "sample_count": 256492,
+        "macro_f1": 0.2353,
+        "weighted_f1": 0.391,
+        "balanced_accuracy": 0.3719,
+        "log_loss": 1.1698,
+        "brier_score": 0.7082,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.842,
+            "recall": 0.2825,
+            "f1": 0.423,
+            "support": 209273
+          },
+          "SERIOUS": {
+            "precision": 0.1926,
+            "recall": 0.4057,
+            "f1": 0.2612,
+            "support": 44817
+          },
+          "FATAL": {
+            "precision": 0.0112,
+            "recall": 0.4276,
+            "f1": 0.0218,
+            "support": 2402
+          }
+        },
+        "confusion_matrix": [
+          [
+            59112,
+            75235,
+            74926
+          ],
+          [
+            10684,
+            18181,
+            15952
+          ],
+          [
+            409,
+            966,
+            1027
+          ]
+        ]
+      },
+      "v2": {
+        "split": "v2 LOCO Test (DE)",
+        "sample_count": 256492,
+        "macro_f1": 0.3095,
+        "weighted_f1": 0.6257,
+        "balanced_accuracy": 0.4268,
+        "log_loss": 0.933,
+        "brier_score": 0.5613,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.843,
+            "recall": 0.6456,
+            "f1": 0.7312,
+            "support": 209273
+          },
+          "SERIOUS": {
+            "precision": 0.2444,
+            "recall": 0.1245,
+            "f1": 0.165,
+            "support": 44817
+          },
+          "FATAL": {
+            "precision": 0.0167,
+            "recall": 0.5104,
+            "f1": 0.0323,
+            "support": 2402
+          }
+        },
+        "confusion_matrix": [
+          [
+            135098,
+            16958,
+            57217
+          ],
+          [
+            24286,
+            5580,
+            14951
+          ],
+          [
+            879,
+            297,
+            1226
+          ]
+        ]
+      },
+      "macro_f1_delta": 0.0742,
+      "balanced_acc_delta": 0.0549
+    },
+    "FR": {
+      "v1": {
+        "split": "Existing v1 Test (FR)",
+        "sample_count": 54822,
+        "macro_f1": 0.3934,
+        "weighted_f1": 0.5299,
+        "balanced_accuracy": 0.5517,
+        "log_loss": 1.0565,
+        "brier_score": 0.6251,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.8832,
+            "recall": 0.529,
+            "f1": 0.6617,
+            "support": 35037
+          },
+          "SERIOUS": {
+            "precision": 0.4335,
+            "recall": 0.2466,
+            "f1": 0.3144,
+            "support": 16582
+          },
+          "FATAL": {
+            "precision": 0.1154,
+            "recall": 0.8795,
+            "f1": 0.2041,
+            "support": 3203
+          }
+        },
+        "confusion_matrix": [
+          [
+            18535,
+            5142,
+            11360
+          ],
+          [
+            2266,
+            4089,
+            10227
+          ],
+          [
+            185,
+            201,
+            2817
+          ]
+        ]
+      },
+      "v2": {
+        "split": "v2 LOCO Test (FR)",
+        "sample_count": 54822,
+        "macro_f1": 0.323,
+        "weighted_f1": 0.5248,
+        "balanced_accuracy": 0.3649,
+        "log_loss": 0.8503,
+        "brier_score": 0.5107,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.6538,
+            "recall": 0.9535,
+            "f1": 0.7757,
+            "support": 35037
+          },
+          "SERIOUS": {
+            "precision": 0.4244,
+            "recall": 0.0396,
+            "f1": 0.0725,
+            "support": 16582
+          },
+          "FATAL": {
+            "precision": 0.149,
+            "recall": 0.1015,
+            "f1": 0.1207,
+            "support": 3203
+          }
+        },
+        "confusion_matrix": [
+          [
+            33407,
+            740,
+            890
+          ],
+          [
+            14959,
+            657,
+            966
+          ],
+          [
+            2727,
+            151,
+            325
+          ]
+        ]
+      },
+      "macro_f1_delta": -0.0704,
+      "balanced_acc_delta": -0.1868
+    },
+    "GB": {
+      "v1": {
+        "split": "Existing v1 Test (GB)",
+        "sample_count": 105982,
+        "macro_f1": 0.4065,
+        "weighted_f1": 0.67,
+        "balanced_accuracy": 0.4993,
+        "log_loss": 0.8178,
+        "brier_score": 0.4971,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.8085,
+            "recall": 0.7685,
+            "f1": 0.788,
+            "support": 81053
+          },
+          "SERIOUS": {
+            "precision": 0.3244,
+            "recall": 0.2739,
+            "f1": 0.297,
+            "support": 23327
+          },
+          "FATAL": {
+            "precision": 0.0789,
+            "recall": 0.4557,
+            "f1": 0.1345,
+            "support": 1602
+          }
+        },
+        "confusion_matrix": [
+          [
+            62287,
+            12978,
+            5788
+          ],
+          [
+            14206,
+            6389,
+            2732
+          ],
+          [
+            544,
+            328,
+            730
+          ]
+        ]
+      },
+      "v2": {
+        "split": "v2 LOCO Test (GB)",
+        "sample_count": 105982,
+        "macro_f1": 0.1714,
+        "weighted_f1": 0.1774,
+        "balanced_accuracy": 0.4142,
+        "log_loss": 1.2988,
+        "brier_score": 0.7842,
+        "per_class": {
+          "SLIGHT": {
+            "precision": 0.789,
+            "recall": 0.0773,
+            "f1": 0.1408,
+            "support": 81053
+          },
+          "SERIOUS": {
+            "precision": 0.2073,
+            "recall": 0.6373,
+            "f1": 0.3128,
+            "support": 23327
+          },
+          "FATAL": {
+            "precision": 0.0321,
+            "recall": 0.5281,
+            "f1": 0.0606,
+            "support": 1602
+          }
+        },
+        "confusion_matrix": [
+          [
+            6264,
+            56165,
+            18624
+          ],
+          [
+            1603,
+            14866,
+            6858
+          ],
+          [
+            72,
+            684,
+            846
+          ]
+        ]
+      },
+      "macro_f1_delta": -0.2351,
+      "balanced_acc_delta": -0.0851
+    }
+  },
+  "pooled_test_metrics_10pct": {
+    "split": "Trauma-Calibrated LightGBM Candidate",
+    "sample_count": 61858,
+    "macro_f1": 0.4508,
+    "weighted_f1": 0.6598,
+    "balanced_accuracy": 0.4826,
+    "log_loss": 0.7531,
+    "brier_score": 0.4642,
+    "per_class": {
+      "SLIGHT": {
+        "precision": 0.8183,
+        "recall": 0.6906,
+        "f1": 0.7491,
+        "support": 45095
+      },
+      "SERIOUS": {
+        "precision": 0.375,
+        "recall": 0.5224,
+        "f1": 0.4366,
+        "support": 15703
+      },
+      "FATAL": {
+        "precision": 0.1292,
+        "recall": 0.2349,
+        "f1": 0.1667,
+        "support": 1060
+      }
+    },
+    "confusion_matrix": [
+      [
+        31144,
+        13160,
+        791
+      ],
+      [
+        6613,
+        8203,
+        887
+      ],
+      [
+        302,
+        509,
+        249
+      ]
+    ]
+  },
+  "models_benchmark_comparison": {
+    "Logistic Regression": {
+      "split": "Logistic Regression Baseline",
+      "sample_count": 61858,
+      "macro_f1": 0.3675,
+      "weighted_f1": 0.5697,
+      "balanced_accuracy": 0.5129,
+      "log_loss": 0.9801,
+      "brier_score": 0.5904,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8246,
+          "recall": 0.5412,
+          "f1": 0.6535,
+          "support": 45095
+        },
+        "SERIOUS": {
+          "precision": 0.332,
+          "recall": 0.3966,
+          "f1": 0.3614,
+          "support": 15703
+        },
+        "FATAL": {
+          "precision": 0.0472,
+          "recall": 0.6009,
+          "f1": 0.0875,
+          "support": 1060
+        }
+      },
+      "confusion_matrix": [
+        [
+          24406,
+          12292,
+          8397
+        ],
+        [
+          5009,
+          6228,
+          4466
+        ],
+        [
+          182,
+          241,
+          637
+        ]
+      ]
+    },
+    "LightGBM": {
+      "split": "LightGBM Multiclass",
+      "sample_count": 61858,
+      "macro_f1": 0.3868,
+      "weighted_f1": 0.5952,
+      "balanced_accuracy": 0.5368,
+      "log_loss": 0.9302,
+      "brier_score": 0.5601,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.835,
+          "recall": 0.578,
+          "f1": 0.6832,
+          "support": 45095
+        },
+        "SERIOUS": {
+          "precision": 0.3462,
+          "recall": 0.4118,
+          "f1": 0.3762,
+          "support": 15703
+        },
+        "FATAL": {
+          "precision": 0.055,
+          "recall": 0.6208,
+          "f1": 0.101,
+          "support": 1060
+        }
+      },
+      "confusion_matrix": [
+        [
+          26066,
+          11980,
+          7049
+        ],
+        [
+          4978,
+          6466,
+          4259
+        ],
+        [
+          172,
+          230,
+          658
+        ]
+      ]
+    },
+    "CatBoost": {
+      "split": "CatBoost Multiclass",
+      "sample_count": 61858,
+      "macro_f1": 0.3831,
+      "weighted_f1": 0.5957,
+      "balanced_accuracy": 0.5322,
+      "log_loss": 0.9438,
+      "brier_score": 0.569,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8295,
+          "recall": 0.5869,
+          "f1": 0.6874,
+          "support": 45095
+        },
+        "SERIOUS": {
+          "precision": 0.3506,
+          "recall": 0.3832,
+          "f1": 0.3661,
+          "support": 15703
+        },
+        "FATAL": {
+          "precision": 0.0519,
+          "recall": 0.6264,
+          "f1": 0.0959,
+          "support": 1060
+        }
+      },
+      "confusion_matrix": [
+        [
+          26465,
+          10945,
+          7685
+        ],
+        [
+          5247,
+          6017,
+          4439
+        ],
+        [
+          194,
+          202,
+          664
+        ]
+      ]
+    },
+    "Trauma-Calibrated LightGBM": {
+      "split": "Trauma-Calibrated LightGBM Candidate",
+      "sample_count": 61858,
+      "macro_f1": 0.4508,
+      "weighted_f1": 0.6598,
+      "balanced_accuracy": 0.4826,
+      "log_loss": 0.7531,
+      "brier_score": 0.4642,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8183,
+          "recall": 0.6906,
+          "f1": 0.7491,
+          "support": 45095
+        },
+        "SERIOUS": {
+          "precision": 0.375,
+          "recall": 0.5224,
+          "f1": 0.4366,
+          "support": 15703
+        },
+        "FATAL": {
+          "precision": 0.1292,
+          "recall": 0.2349,
+          "f1": 0.1667,
+          "support": 1060
+        }
+      },
+      "confusion_matrix": [
+        [
+          31144,
+          13160,
+          791
+        ],
+        [
+          6613,
+          8203,
+          887
+        ],
+        [
+          302,
+          509,
+          249
+        ]
+      ]
+    }
+  },
+  "feature_columns": {
+    "numerical": [
+      "speed_limit_kmh",
+      "speed_limit_squared_proxy",
+      "hour_sin",
+      "hour_cos",
+      "month_sin",
+      "month_cos",
+      "day_of_week",
+      "temperature_c",
+      "humidity_pct",
+      "pressure_hpa",
+      "wind_speed_kmh",
+      "precipitation_mm"
+    ],
+    "boolean": [
+      "is_junction",
+      "is_traffic_signal",
+      "is_crossing",
+      "is_roundabout",
+      "is_stop_sign",
+      "is_give_way",
+      "is_railway",
+      "is_weekend",
+      "is_night",
+      "divided_roadway",
+      "has_pedestrian",
+      "has_bicycle",
+      "has_motorcycle",
+      "has_heavy_vehicle",
+      "has_car"
+    ],
+    "categorical": [
+      "road_class",
+      "weather_condition",
+      "light_condition",
+      "road_surface_condition"
+    ],
+    "excluded_for_invariance": [
+      "latitude",
+      "longitude",
+      "country_code"
+    ]
+  }
+}

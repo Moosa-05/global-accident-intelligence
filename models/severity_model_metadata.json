@@ -1,0 +1,416 @@
+{
+  "model_name": "accident_severity_lightgbm",
+  "model_version": "2.0.0",
+  "trained_at": "2026-11-19T09:12:16.466475",
+  "task": "Multiclass Accident Traffic-Impact Severity Prediction (1-4)",
+  "training_data_source": "US Accidents March 2023 Release (Moosavi et al., 7.728M records)",
+  "training_geography": "United States (49 contiguous states + DC)",
+  "licensing_and_commercial_terms": {
+    "dataset_license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+    "commercial_status": "Academic Research & Pre-Commercial SaaS Validation. Commercial production deployment requires licensing underlying telematics data (e.g. TomTom, HERE, INRIX) or training on public-domain CC-0 crash datasets.",
+    "derivative_restriction": "Models trained directly on CC BY-NC-SA 4.0 data share non-commercial attribution clauses."
+  },
+  "sample_counts": {
+    "training_samples": 5347829,
+    "validation_samples": 1667231,
+    "geographic_holdout_samples": 177425,
+    "test_samples": 246633,
+    "total_samples_processed": 7439118
+  },
+  "hyperparameters": {
+    "objective": "multiclass",
+    "num_class": 4,
+    "class_weight": "balanced",
+    "n_estimators": 120,
+    "learning_rate": 0.08,
+    "num_leaves": 31,
+    "max_depth": 6,
+    "subsample": 0.85,
+    "colsample_bytree": 0.8,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "dummy_baseline_metrics": {
+    "macro_f1": 0.2391,
+    "weighted_f1": 0.8762,
+    "balanced_accuracy": 0.25,
+    "log_loss": 0.5013,
+    "brier_score": 0.2067,
+    "per_class": {
+      "severity_1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 35330
+      },
+      "severity_2": {
+        "precision": 0.9163,
+        "recall": 1.0,
+        "f1": 0.9563,
+        "support": 1527604
+      },
+      "severity_3": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 66865
+      },
+      "severity_4": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 37432
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        35330,
+        0,
+        0
+      ],
+      [
+        0,
+        1527604,
+        0,
+        0
+      ],
+      [
+        0,
+        66865,
+        0,
+        0
+      ],
+      [
+        0,
+        37432,
+        0,
+        0
+      ]
+    ]
+  },
+  "sgd_baseline_metrics": {
+    "macro_f1": 0.1737,
+    "weighted_f1": 0.5103,
+    "balanced_accuracy": 0.3444,
+    "log_loss": 1.4288,
+    "brier_score": 0.4329,
+    "per_class": {
+      "severity_1": {
+        "precision": 0.0465,
+        "recall": 0.2355,
+        "f1": 0.0777,
+        "support": 35330
+      },
+      "severity_2": {
+        "precision": 0.9357,
+        "recall": 0.393,
+        "f1": 0.5536,
+        "support": 1527604
+      },
+      "severity_3": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 66865
+      },
+      "severity_4": {
+        "precision": 0.0331,
+        "recall": 0.7491,
+        "f1": 0.0634,
+        "support": 37432
+      }
+    },
+    "confusion_matrix": [
+      [
+        8321,
+        11845,
+        0,
+        15164
+      ],
+      [
+        162900,
+        600405,
+        3,
+        764296
+      ],
+      [
+        5183,
+        22561,
+        0,
+        39121
+      ],
+      [
+        2534,
+        6858,
+        0,
+        28040
+      ]
+    ]
+  },
+  "validation_metrics": {
+    "macro_f1": 0.2211,
+    "weighted_f1": 0.5332,
+    "balanced_accuracy": 0.4282,
+    "log_loss": 1.1808,
+    "brier_score": 0.6723,
+    "per_class": {
+      "severity_1": {
+        "precision": 0.0313,
+        "recall": 0.2772,
+        "f1": 0.0562,
+        "support": 35330
+      },
+      "severity_2": {
+        "precision": 0.939,
+        "recall": 0.4108,
+        "f1": 0.5715,
+        "support": 1527604
+      },
+      "severity_3": {
+        "precision": 0.0924,
+        "recall": 0.3832,
+        "f1": 0.1489,
+        "support": 66865
+      },
+      "severity_4": {
+        "precision": 0.0588,
+        "recall": 0.6414,
+        "f1": 0.1077,
+        "support": 37432
+      }
+    },
+    "confusion_matrix": [
+      [
+        9795,
+        18852,
+        3553,
+        3130
+      ],
+      [
+        288887,
+        627486,
+        245236,
+        365995
+      ],
+      [
+        10498,
+        15338,
+        25621,
+        15408
+      ],
+      [
+        3941,
+        6555,
+        2926,
+        24010
+      ]
+    ]
+  },
+  "geographic_holdout_metrics": {
+    "macro_f1": 0.1812,
+    "weighted_f1": 0.3645,
+    "balanced_accuracy": 0.2772,
+    "log_loss": 1.36,
+    "brier_score": 0.7872,
+    "per_class": {
+      "severity_1": {
+        "precision": 0.0439,
+        "recall": 0.1653,
+        "f1": 0.0694,
+        "support": 2553
+      },
+      "severity_2": {
+        "precision": 0.765,
+        "recall": 0.3133,
+        "f1": 0.4446,
+        "support": 135187
+      },
+      "severity_3": {
+        "precision": 0.2208,
+        "recall": 0.0781,
+        "f1": 0.1154,
+        "support": 30058
+      },
+      "severity_4": {
+        "precision": 0.0522,
+        "recall": 0.552,
+        "f1": 0.0954,
+        "support": 9627
+      }
+    },
+    "confusion_matrix": [
+      [
+        422,
+        684,
+        71,
+        1376
+      ],
+      [
+        7842,
+        42359,
+        7519,
+        77467
+      ],
+      [
+        1021,
+        9027,
+        2348,
+        17662
+      ],
+      [
+        317,
+        3299,
+        697,
+        5314
+      ]
+    ]
+  },
+  "test_metrics": {
+    "macro_f1": 0.1909,
+    "weighted_f1": 0.6247,
+    "balanced_accuracy": 0.5444,
+    "log_loss": 1.0675,
+    "brier_score": 0.6148,
+    "per_class": {
+      "severity_1": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "severity_2": {
+        "precision": 0.9865,
+        "recall": 0.4731,
+        "f1": 0.6395,
+        "support": 239572
+      },
+      "severity_3": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "severity_4": {
+        "precision": 0.0691,
+        "recall": 0.6158,
+        "f1": 0.1242,
+        "support": 7061
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        31430,
+        113341,
+        36204,
+        58597
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        634,
+        1554,
+        525,
+        4348
+      ]
+    ]
+  },
+  "top_features": [
+    {
+      "feature": "longitude",
+      "importance": 4065
+    },
+    {
+      "feature": "latitude",
+      "importance": 3566
+    },
+    {
+      "feature": "pressure_hpa",
+      "importance": 1309
+    },
+    {
+      "feature": "wind_speed_kmh",
+      "importance": 1140
+    },
+    {
+      "feature": "temperature_c",
+      "importance": 769
+    },
+    {
+      "feature": "hour_cos",
+      "importance": 564
+    },
+    {
+      "feature": "hour_sin",
+      "importance": 507
+    },
+    {
+      "feature": "humidity_pct",
+      "importance": 493
+    },
+    {
+      "feature": "is_traffic_signal",
+      "importance": 362
+    },
+    {
+      "feature": "weather_category",
+      "importance": 246
+    }
+  ],
+  "evaluation_audit_findings": {
+    "historical_anomaly": "The previous test split was evaluated exclusively on 2023 US Accidents data, which lacked severity classes 1 and 3 due to upstream data source collection cutoff in March 2023.",
+    "corrected_validation_method": "Evaluated on independent 2022 test split (150,000 holdout observations) and 4-state geographic holdout (WA, CO, OH, GA) where ALL FOUR SEVERITY CLASSES are fully represented.",
+    "four_class_test_results_2022": {
+      "macro_f1": 0.287,
+      "weighted_f1": 0.8385,
+      "balanced_accuracy": 0.3107,
+      "per_class": {
+        "severity_1": {
+          "precision": 0.035,
+          "recall": 0.0028,
+          "f1": 0.0051,
+          "support": 3252
+        },
+        "severity_2": {
+          "precision": 0.9234,
+          "recall": 0.8913,
+          "f1": 0.907,
+          "support": 137278
+        },
+        "severity_3": {
+          "precision": 0.1125,
+          "recall": 0.3042,
+          "f1": 0.1642,
+          "support": 6068
+        },
+        "severity_4": {
+          "precision": 0.1824,
+          "recall": 0.0444,
+          "f1": 0.0714,
+          "support": 3402
+        }
+      }
+    },
+    "geographic_holdout_results": {
+      "macro_f1": 0.3082,
+      "balanced_accuracy": 0.308,
+      "states": [
+        "WA",
+        "CO",
+        "OH",
+        "GA"
+      ]
+    }
+  }
+}

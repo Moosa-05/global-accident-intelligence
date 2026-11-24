@@ -1,0 +1,44 @@
+{
+  "model_id": "human_injury_severity_v1",
+  "task": "3-Class Human Injury Severity Prediction",
+  "target_classes": {
+    "0": "SLIGHT",
+    "1": "SERIOUS",
+    "2": "FATAL"
+  },
+  "feature_columns_numerical": [
+    "latitude",
+    "longitude",
+    "speed_limit_kmh",
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "day_of_week",
+    "temperature_c",
+    "humidity_pct",
+    "pressure_hpa",
+    "wind_speed_kmh",
+    "precipitation_mm"
+  ],
+  "feature_columns_boolean": [
+    "is_junction",
+    "is_traffic_signal",
+    "is_crossing",
+    "is_roundabout",
+    "is_stop_sign",
+    "is_give_way",
+    "is_railway",
+    "is_weekend",
+    "is_night",
+    "divided_roadway"
+  ],
+  "feature_columns_categorical": [
+    "road_class",
+    "weather_condition",
+    "light_condition",
+    "road_surface_condition"
+  ],
+  "total_raw_features": 27,
+  "total_encoded_features": 51
+}

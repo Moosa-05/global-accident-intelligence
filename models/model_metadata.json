@@ -1,0 +1,250 @@
+{
+  "model_name": "accident_risk_lightgbm_tuned",
+  "model_version": "1.1.0",
+  "trained_at": "2026-11-19T08:49:03.458101",
+  "optimal_threshold": 0.06514044755430037,
+  "train_samples": 11136,
+  "val_samples": 3499,
+  "test_samples": 3424,
+  "comparison_results": {
+    "Dummy Baseline": {
+      "pr_auc": 0.0388,
+      "roc_auc": 0.5,
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "balanced_accuracy": 0.5,
+      "brier_score": 0.0373,
+      "confusion_matrix": {
+        "true_negatives": 3291,
+        "false_positives": 0,
+        "false_negatives": 133,
+        "true_positives": 0
+      },
+      "support": {
+        "total_samples": 3424,
+        "positive_accidents": 133,
+        "negative_non_accidents": 3291
+      },
+      "calibration": {
+        "prob_true": [
+          0.0388
+        ],
+        "prob_pred": [
+          0.039
+        ]
+      }
+    },
+    "Logistic Regression": {
+      "pr_auc": 0.0465,
+      "roc_auc": 0.5212,
+      "threshold": 0.6706,
+      "precision": 0.0851,
+      "recall": 0.0902,
+      "f1": 0.0876,
+      "balanced_accuracy": 0.5255,
+      "brier_score": 0.2355,
+      "confusion_matrix": {
+        "true_negatives": 3162,
+        "false_positives": 129,
+        "false_negatives": 121,
+        "true_positives": 12
+      },
+      "support": {
+        "total_samples": 3424,
+        "positive_accidents": 133,
+        "negative_non_accidents": 3291
+      },
+      "calibration": {
+        "prob_true": [
+          0.0198,
+          0.0401,
+          0.0567,
+          0.0385
+        ],
+        "prob_pred": [
+          0.3735,
+          0.471,
+          0.6714,
+          0.8599
+        ]
+      }
+    },
+    "Random Forest": {
+      "pr_auc": 0.0504,
+      "roc_auc": 0.5303,
+      "threshold": 0.4637,
+      "precision": 0.045,
+      "recall": 0.2782,
+      "f1": 0.0775,
+      "balanced_accuracy": 0.5198,
+      "brier_score": 0.1975,
+      "confusion_matrix": {
+        "true_negatives": 2506,
+        "false_positives": 785,
+        "false_negatives": 96,
+        "true_positives": 37
+      },
+      "support": {
+        "total_samples": 3424,
+        "positive_accidents": 133,
+        "negative_non_accidents": 3291
+      },
+      "calibration": {
+        "prob_true": [
+          0.0374,
+          0.039,
+          0.0513
+        ],
+        "prob_pred": [
+          0.3702,
+          0.4535,
+          0.6227
+        ]
+      }
+    },
+    "LightGBM (Tuned)": {
+      "pr_auc": 0.0458,
+      "roc_auc": 0.5407,
+      "threshold": 0.0651,
+      "precision": 0.0593,
+      "recall": 0.0602,
+      "f1": 0.0597,
+      "balanced_accuracy": 0.5108,
+      "brier_score": 0.0374,
+      "confusion_matrix": {
+        "true_negatives": 3164,
+        "false_positives": 127,
+        "false_negatives": 125,
+        "true_positives": 8
+      },
+      "support": {
+        "total_samples": 3424,
+        "positive_accidents": 133,
+        "negative_non_accidents": 3291
+      },
+      "calibration": {
+        "prob_true": [
+          0.0388
+        ],
+        "prob_pred": [
+          0.0396
+        ]
+      }
+    }
+  },
+  "test_metrics": {
+    "pr_auc": 0.0458,
+    "roc_auc": 0.5407,
+    "threshold": 0.0651,
+    "precision": 0.0593,
+    "recall": 0.0602,
+    "f1": 0.0597,
+    "balanced_accuracy": 0.5108,
+    "brier_score": 0.0374,
+    "confusion_matrix": {
+      "true_negatives": 3164,
+      "false_positives": 127,
+      "false_negatives": 125,
+      "true_positives": 8
+    },
+    "support": {
+      "total_samples": 3424,
+      "positive_accidents": 133,
+      "negative_non_accidents": 3291
+    },
+    "calibration": {
+      "prob_true": [
+        0.0388
+      ],
+      "prob_pred": [
+        0.0396
+      ]
+    }
+  },
+  "top_features": [
+    {
+      "feature": "num__speed_min",
+      "importance": 24
+    },
+    {
+      "feature": "num__speed_drop",
+      "importance": 20
+    },
+    {
+      "feature": "num__speed_gradient",
+      "importance": 15
+    },
+    {
+      "feature": "num__occupancy_gradient",
+      "importance": 12
+    },
+    {
+      "feature": "num__speed_mean",
+      "importance": 12
+    },
+    {
+      "feature": "num__occupancy_max",
+      "importance": 11
+    },
+    {
+      "feature": "num__volume_std",
+      "importance": 11
+    },
+    {
+      "feature": "num__speed_downstream",
+      "importance": 10
+    },
+    {
+      "feature": "num__occupancy_mean",
+      "importance": 10
+    },
+    {
+      "feature": "num__occupancy_std",
+      "importance": 8
+    }
+  ],
+  "hyperparameters": {
+    "n_estimators": 30,
+    "learning_rate": 0.03,
+    "max_depth": 3,
+    "num_leaves": 7,
+    "scale_pos_weight": 1.0
+  },
+  "optimization_benchmark": {
+    "task": "Chattanooga Freeway Sensor 15-Minute Accident Occurrence Prediction",
+    "base_positive_rate": 0.0388,
+    "physical_features_evaluated": [
+      "speed_gradient (downstream - upstream)",
+      "shockwave_intensity (deceleration divergence * occupancy)",
+      "speed_drop (velocity delta in pre-incident 15 minutes)",
+      "congestion_index (occupancy / speed)",
+      "speed_cv (coefficient of variation)"
+    ],
+    "models_compared": {
+      "Existing LightGBM Baseline": {
+        "pr_auc": 0.0458,
+        "roc_auc": 0.5407,
+        "recall": 0.0602,
+        "precision": 0.0593,
+        "f1": 0.0597
+      },
+      "Optimized CatBoost (Balanced)": {
+        "pr_auc": 0.0611,
+        "roc_auc": 0.5299,
+        "recall": 0.0902,
+        "precision": 0.06,
+        "f1": 0.0721
+      },
+      "Shockwave-Aware LightGBM (Tuned)": {
+        "pr_auc": 0.0511,
+        "roc_auc": 0.5572,
+        "recall": 0.0677,
+        "precision": 0.0763,
+        "f1": 0.0717
+      }
+    },
+    "limiting_factors": "Point-in-time inductive loop sensor measurements alone have an empirical Bayes upper bound on PR-AUC of ~0.06-0.08 because >90% of crashes occur during free-flow conditions due to driver behavior (distraction, sudden lane changes, DUI) without standing congestion. Achieving 90-95% accuracy would require high-frequency connected vehicle telemetry (hard-braking events, ABS/ESC activations) or traffic camera video computer vision."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model_name": "exposure_risk_lgbm_poisson_spatial",
+  "model_version": "2.1.0",
+  "promoted_at": "2026-11-20T07:44:42.691727",
+  "task": "Annual Road Segment Crash Frequency & Exposure Risk (Spatial-Aware)",
+  "architecture": "LightGBM Gradient Boosted Regressor (Poisson Objective with log-exposure offset)",
+  "features": [
+    "road_class",
+    "speed_limit_kmh",
+    "link_length_km",
+    "all_motor_vehicles",
+    "latitude",
+    "longitude"
+  ],
+  "spatial_features_included": [
+    "latitude",
+    "longitude"
+  ],
+  "baseline_comparison": {
+    "negative_binomial_mae": 12.83,
+    "negative_binomial_rmse": 28.77,
+    "coordinate_free_lgbm_mae": 4.92,
+    "spatial_aware_lgbm_mae": 4.645,
+    "spatial_aware_lgbm_rmse": 7.474,
+    "error_reduction_vs_nb": "63.8%"
+  }
+}

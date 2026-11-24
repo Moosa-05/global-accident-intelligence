@@ -1,0 +1,64 @@
+# Environment files and credentials
+.env
+.env.production
+.env.local
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Databases & local sqlite
+*.db
+*.sqlite
+*.sqlite3
+accident_dev.db
+test_accident.db
+mlflow.db
+mlruns/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Node & Frontend Build
+node_modules/
+dist/
+.vite/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker volume data
+data/postgres/
+backups/*.sql.gz
+
+# Machine Learning Training Data & Large Datasets
+data/raw/
+data/processed/
+data/external/
+*.parquet
+*.csv
+*.zip
+*.tar.gz
+catboost_info/
+!data/README.md
+

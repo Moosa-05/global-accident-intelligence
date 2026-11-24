@@ -1,0 +1,446 @@
+{
+  "model_name": "human_injury_severity_lightgbm",
+  "model_version": "1.0.0",
+  "trained_at": "2026-11-19T09:53:40.371193",
+  "task": "3-Class Human Physiological Trauma Severity",
+  "training_data_sources": [
+    "UK Department for Transport STATS19 (2022) - OGL v3.0",
+    "France Minist\u00e8re de l'Int\u00e9rieur / ONISR BAAC (2023) - Licence Ouverte v2.0"
+  ],
+  "licensing": "Commercial SaaS Cleared (OGL v3.0 & Licence Ouverte v2.0)",
+  "sample_counts": {
+    "total_samples": 160804,
+    "training_samples": 128643,
+    "validation_samples": 16080,
+    "test_samples": 16081,
+    "uk_samples": 105982,
+    "france_samples": 54822
+  },
+  "evaluation_metrics": {
+    "dummy_baseline": {
+      "split": "Dummy Baseline (Prior)",
+      "macro_f1": 0.2795,
+      "weighted_f1": 0.6053,
+      "balanced_accuracy": 0.3333,
+      "log_loss": 0.6861,
+      "brier_score": 0.4164,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.7219,
+          "recall": 1.0,
+          "f1": 0.8385,
+          "support": 11609
+        },
+        "SERIOUS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 3991
+        },
+        "FATAL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 481
+        }
+      },
+      "confusion_matrix": [
+        [
+          11609,
+          0,
+          0
+        ],
+        [
+          3991,
+          0,
+          0
+        ],
+        [
+          481,
+          0,
+          0
+        ]
+      ]
+    },
+    "logistic_regression": {
+      "split": "Logistic Regression (Balanced)",
+      "macro_f1": 0.3462,
+      "weighted_f1": 0.5584,
+      "balanced_accuracy": 0.4878,
+      "log_loss": 0.9946,
+      "brier_score": 0.6052,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.7942,
+          "recall": 0.6183,
+          "f1": 0.6953,
+          "support": 11609
+        },
+        "SERIOUS": {
+          "precision": 0.266,
+          "recall": 0.1756,
+          "f1": 0.2116,
+          "support": 3991
+        },
+        "FATAL": {
+          "precision": 0.073,
+          "recall": 0.6694,
+          "f1": 0.1317,
+          "support": 481
+        }
+      },
+      "confusion_matrix": [
+        [
+          7178,
+          1878,
+          2553
+        ],
+        [
+          1757,
+          701,
+          1533
+        ],
+        [
+          103,
+          56,
+          322
+        ]
+      ]
+    },
+    "test_multi_country": {
+      "split": "Multi-Country Test (10%)",
+      "macro_f1": 0.3991,
+      "weighted_f1": 0.6172,
+      "balanced_accuracy": 0.5317,
+      "log_loss": 0.9123,
+      "brier_score": 0.5485,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8203,
+          "recall": 0.6927,
+          "f1": 0.7511,
+          "support": 11609
+        },
+        "SERIOUS": {
+          "precision": 0.3362,
+          "recall": 0.2433,
+          "f1": 0.2823,
+          "support": 3991
+        },
+        "FATAL": {
+          "precision": 0.0935,
+          "recall": 0.659,
+          "f1": 0.1638,
+          "support": 481
+        }
+      },
+      "confusion_matrix": [
+        [
+          8041,
+          1828,
+          1740
+        ],
+        [
+          1687,
+          971,
+          1333
+        ],
+        [
+          75,
+          89,
+          317
+        ]
+      ]
+    },
+    "test_uk_in_country": {
+      "split": "UK In-Country Test",
+      "macro_f1": 0.388,
+      "weighted_f1": 0.6659,
+      "balanced_accuracy": 0.4497,
+      "log_loss": 0.8244,
+      "brier_score": 0.5013,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8051,
+          "recall": 0.7687,
+          "f1": 0.7865,
+          "support": 8029
+        },
+        "SERIOUS": {
+          "precision": 0.3146,
+          "recall": 0.2599,
+          "f1": 0.2846,
+          "support": 2305
+        },
+        "FATAL": {
+          "precision": 0.0543,
+          "recall": 0.3205,
+          "f1": 0.0929,
+          "support": 156
+        }
+      },
+      "confusion_matrix": [
+        [
+          6172,
+          1258,
+          599
+        ],
+        [
+          1435,
+          599,
+          271
+        ],
+        [
+          59,
+          47,
+          50
+        ]
+      ]
+    },
+    "test_france_in_country": {
+      "split": "France In-Country Test",
+      "macro_f1": 0.3745,
+      "weighted_f1": 0.5138,
+      "balanced_accuracy": 0.5214,
+      "log_loss": 1.0771,
+      "brier_score": 0.6372,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.8746,
+          "recall": 0.5221,
+          "f1": 0.6538,
+          "support": 3580
+        },
+        "SERIOUS": {
+          "precision": 0.378,
+          "recall": 0.2206,
+          "f1": 0.2787,
+          "support": 1686
+        },
+        "FATAL": {
+          "precision": 0.1081,
+          "recall": 0.8215,
+          "f1": 0.1911,
+          "support": 325
+        }
+      },
+      "confusion_matrix": [
+        [
+          1869,
+          570,
+          1141
+        ],
+        [
+          252,
+          372,
+          1062
+        ],
+        [
+          16,
+          42,
+          267
+        ]
+      ]
+    },
+    "cross_country_uk_to_fr": {
+      "split": "UK-to-France Transfer",
+      "macro_f1": 0.3709,
+      "weighted_f1": 0.5617,
+      "balanced_accuracy": 0.3712,
+      "log_loss": 0.8555,
+      "brier_score": 0.5326,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.6754,
+          "recall": 0.7614,
+          "f1": 0.7158,
+          "support": 35037
+        },
+        "SERIOUS": {
+          "precision": 0.3724,
+          "recall": 0.2994,
+          "f1": 0.3319,
+          "support": 16582
+        },
+        "FATAL": {
+          "precision": 0.0849,
+          "recall": 0.0528,
+          "f1": 0.0651,
+          "support": 3203
+        }
+      },
+      "confusion_matrix": [
+        [
+          26677,
+          7340,
+          1020
+        ],
+        [
+          10816,
+          4965,
+          801
+        ],
+        [
+          2005,
+          1029,
+          169
+        ]
+      ]
+    },
+    "cross_country_fr_to_uk": {
+      "split": "France-to-UK Transfer",
+      "macro_f1": 0.1346,
+      "weighted_f1": 0.0979,
+      "balanced_accuracy": 0.3364,
+      "log_loss": 1.4843,
+      "brier_score": 0.8883,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.7273,
+          "recall": 0.0141,
+          "f1": 0.0276,
+          "support": 81053
+        },
+        "SERIOUS": {
+          "precision": 0.2205,
+          "recall": 0.8147,
+          "f1": 0.347,
+          "support": 23327
+        },
+        "FATAL": {
+          "precision": 0.0159,
+          "recall": 0.1804,
+          "f1": 0.0292,
+          "support": 1602
+        }
+      },
+      "confusion_matrix": [
+        [
+          1139,
+          65900,
+          14014
+        ],
+        [
+          407,
+          19005,
+          3915
+        ],
+        [
+          20,
+          1293,
+          289
+        ]
+      ]
+    },
+    "spatial_holdout": {
+      "split": "Spatially Independent Holdout (Wales & Scotland)",
+      "macro_f1": 0.3726,
+      "weighted_f1": 0.4907,
+      "balanced_accuracy": 0.5252,
+      "log_loss": 0.9851,
+      "brier_score": 0.6057,
+      "per_class": {
+        "SLIGHT": {
+          "precision": 0.7815,
+          "recall": 0.4035,
+          "f1": 0.5322,
+          "support": 461
+        },
+        "SERIOUS": {
+          "precision": 0.3746,
+          "recall": 0.5221,
+          "f1": 0.4362,
+          "support": 226
+        },
+        "FATAL": {
+          "precision": 0.0844,
+          "recall": 0.65,
+          "f1": 0.1494,
+          "support": 20
+        }
+      },
+      "confusion_matrix": [
+        [
+          186,
+          193,
+          82
+        ],
+        [
+          49,
+          118,
+          59
+        ],
+        [
+          3,
+          4,
+          13
+        ]
+      ]
+    }
+  },
+  "top_features": [
+    {
+      "feature": "num__latitude",
+      "importance": 1504
+    },
+    {
+      "feature": "num__longitude",
+      "importance": 1240
+    },
+    {
+      "feature": "num__wind_speed_kmh",
+      "importance": 1062
+    },
+    {
+      "feature": "num__temperature_c",
+      "importance": 818
+    },
+    {
+      "feature": "num__speed_limit_kmh",
+      "importance": 781
+    },
+    {
+      "feature": "num__hour_cos",
+      "importance": 641
+    },
+    {
+      "feature": "num__hour_sin",
+      "importance": 578
+    },
+    {
+      "feature": "num__pressure_hpa",
+      "importance": 475
+    },
+    {
+      "feature": "num__humidity_pct",
+      "importance": 453
+    },
+    {
+      "feature": "num__day_of_week",
+      "importance": 395
+    }
+  ],
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": "balanced",
+    "colsample_bytree": 0.8,
+    "importance_type": "split",
+    "learning_rate": 0.06,
+    "max_depth": 6,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 120,
+    "n_jobs": -1,
+    "num_leaves": 31,
+    "objective": "multiclass",
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 0.85,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "num_class": 3,
+    "verbose": -1
+  }
+}
